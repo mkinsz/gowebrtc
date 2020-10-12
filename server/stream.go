@@ -1,4 +1,4 @@
-package main
+package server
 
 import (
 	"io"
@@ -15,6 +15,8 @@ import (
 const rtspURL = "rtsp://10.67.24.94:8554/a170432"
 
 func serveStream() {
+	rtsp.DebugRtsp = false
+
 	annexbNALUStartCode := func() []byte { return []byte{0x00, 0x00, 0x00, 0x01} }
 
 	for {

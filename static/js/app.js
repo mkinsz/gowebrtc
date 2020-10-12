@@ -8,7 +8,7 @@ pc.ontrack = function (event) {
     el.srcObject = event.streams[0]
     el.muted = true
     el.autoplay = true
-    el.controls = true
+    el.controls = false
     el.width = 600
 
     document.getElementById('remoteVideos').appendChild(el)

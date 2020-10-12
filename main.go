@@ -6,24 +6,11 @@ import (
 	"os/signal"
 	"syscall"
 
-	"github.com/pion/webrtc/v3"
-)
-
-var (
-	videoTrack          *webrtc.Track
-	peerConnectionCount int64
+	"gowebrtc/server"
 )
 
 func main() {
-	var err error
-	videoTrack, err = webrtc.NewTrack(webrtc.DefaultPayloadTypeH264, 5000, "pion-rtsp", "pion-rtsp", webrtc.NewRTPH264Codec(webrtc.DefaultPayloadTypeH264, 90000))
-	if err != nil {
-		panic(err)
-	}
-
-	go serveHTTP()
-	go serveStream()
-	// go serveReport()
+	server.Run()
 
 	sigs := make(chan os.Signal, 1)
 	done := make(chan bool, 1)

@@ -1,4 +1,4 @@
-package main
+package server
 
 import (
 	"encoding/json"
@@ -14,7 +14,7 @@ func serveHTTP() {
 	http.HandleFunc("/codec", codecHandler)
 	http.HandleFunc("/signal", signalHandler)
 
-	fmt.Println("Open http://localhost:8080 to access this demo")
+	fmt.Printf("Open http://localhost%s to access this demo", ":8080")
 	panic(http.ListenAndServe(":8080", nil))
 }
 
