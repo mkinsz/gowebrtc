@@ -1,0 +1,66 @@
+{
+	"Database": {
+		"Type": "Bolt",
+		"Bolt": {
+			"Path": "goweb.db"
+		},
+		"MongoDB": {
+			"URL": "127.0.0.1",
+			"Database": "goweb"
+		},
+		"MySQL": {
+			"Username": "root",
+			"Password": "",
+			"Name": "goweb",
+			"Hostname": "127.0.0.1",
+			"Port": 3306,
+			"Parameter": "?parseTime=true"
+		}
+	},
+	"Email": {
+		"Username": "",
+		"Password": "",
+		"Hostname": "",
+		"Port": 25,
+		"From": ""
+	},
+	"Recaptcha": {
+		"Enabled": false,
+		"Secret": "",
+		"SiteKey": ""
+	},
+	"Server": {
+		"Hostname": "0.0.0.0",
+		"UseHTTP": true,
+		"UseHTTPS": true,
+		"HTTPPort": 80,
+		"HTTPSPort": 443,
+		"CertFile": "tls/server.crt.pem",
+		"KeyFile": "tls/server.key.pem"
+	},
+	"Session": {
+		"SecretKey": "4rjXM/av[KE@Wkn)71wJseY:^y#'8.fN",
+		"Name": "gosess",
+		"Options": {
+			"Path": "/",
+			"Domain": "",
+			"MaxAge": 28800,
+			"Secure": false,
+			"HttpOnly": true
+		}
+	},
+	"Template": {
+		"Root": "base",
+		"Children": [
+			"partial/menu",
+			"partial/footer"
+		]
+	},
+	"View": {
+		"BaseURI": "/",
+		"Extension": "tmpl",
+		"Folder": "template",
+		"Name": "blank",
+		"Caching": true
+	}
+}
